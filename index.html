@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Nacional Financiero | Confianza y Solidez desde 1925</title>
+    
+    <meta name="description" content="El banco de todos los colombianos. Servicios bancarios, créditos, ahorros e inversiones con la seguridad y confianza de siempre.">
+    <link rel="canonical" href="https://www.bancodecolombia.com">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0033A0; /* Azul banco nacional */
+            --primary-dark: #002366;
+            --secondary: #DA291C; /* Rojo banco nacional */
+            --secondary-dark: #B22222;
+            --accent: #FFD100; /* Amarillo banco nacional */
+            --accent-dark: #E6B800;
+            --dark: #1A1A2E;
+            --gray: #5A5A5A;
+            --light: #F5F7FA;
+            --light-gray: #E8EDF3;
+            --success: #28A745;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+        
+        * { margin:0; padding:0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background: white; 
+            color: var(--dark); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+        }
+        
+        /* HEADER BANCARIO SUPERIOR */
+        .top-header {
+            background: var(--primary);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .top-header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+        
+        .header-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .header-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* NAVEGACIÓN BANCARIA PRINCIPAL */
+        nav { 
+            background: white; 
+            position: sticky; 
+            top: 0;
+            width:100%; 
+            z-index:1000; 
+            border-bottom: 3px solid var(--accent);
+            display:flex; 
+            justify-content: space-between; 
+            padding: 0 5%; 
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            height: 80px;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo { 
+            font-weight: 900; 
+            font-size: 1.8rem; 
+            text-decoration: none; 
+            color: var(--primary); 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
+            height: 100%;
+        }
+        
+        .nav-links > li {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--dark); 
+            font-weight: 600; 
+            font-size: 1rem; 
+            transition: var(--transition);
+            padding: 10px 0;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -3px;
+            left: 0;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover { 
+            color: var(--primary); 
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn-bank {
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        /* HERO BANCARIO */
+        .hero-bank { 
+            padding: 120px 5% 80px;
+            background: linear-gradient(rgba(0, 51, 160, 0.9), rgba(0, 51, 160, 0.85)), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-text h1 { 
+            font-size: 3rem; 
+            line-height: 1.2; 
+            margin-bottom: 1.5rem; 
+            font-weight: 900;
+        }
+        
+        .hero-text p { 
+            font-size: 1.2rem; 
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+        
+        /* PRODUCTOS BANCARIOS */
+        .products-section {
+            padding: 100px 5%;
+            background: var(--light);
+        }
+        
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+        
+        .section-header h2 { 
+            font-size: 2.5rem; 
+            margin-bottom: 1rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-header p { 
+            font-size: 1.1rem; 
+            color: var(--gray);
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+        
+        .products-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 30px; 
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .product-card { 
+            background: white; 
+            border-radius: var(--border-radius); 
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover { 
+            border-color: var(--primary); 
+            box-shadow: var(--shadow-hover); 
+            transform: translateY(-10px);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+        }
+        
+        .product-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 51, 160, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .product-card h3 { 
+            font-size: 1.5rem; 
+            margin-bottom: 15px; 
+            color: var(--primary);
+        }
+        
+        .product-card p { 
+            color: var(--gray); 
+            margin-bottom: 25px;
+        }
+        
+        .product-features {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .product-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .product-features li i {
+            color: var(--success);
+        }
+        
+        /* CANALES DIGITALES */
+        .channels-section {
+            padding: 100px 5%;
+            background: white;
+        }
+        
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .channel-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .channel-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 51, 160, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        /* SUCURSALES Y CAJEROS */
+        .branches-section {
+            padding: 100px 5%;
+            background: var(--light);
+        }
+        
+        .branches-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .branches-map {
+            height: 500px;
+            background: #e9e9e9;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .branch-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .branch-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .branch-stat {
+            text-align: center;
+        }
+        
+        .branch-stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            line-height: 1;
+        }
+        
+        .branch-stat-label {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-top: 5px;
+        }
+        
+        /* NOTICIAS Y COMUNICADOS */
+        .news-section {
+            padding: 100px 5%;
+            background: white;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 40px auto 0;
+        }
+        
+        .news-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .news-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 25px;
+            background: white;
+        }
+        
+        .news-date {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        /* CONTACTO BANCARIO */
+        .contact-section {
+            padding: 100px 5%;
+            background: linear-gradient(rgba(0, 51, 160, 0.05), rgba(0, 51, 160, 0.05));
+        }
+        
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+        
+        .contact-details {
+            margin-top: 40px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        /* FOOTER BANCARIO */
+        .bank-footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 5% 40px;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 60px;
+        }
+        
+        .footer-logo {
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: white;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-top: 15px;
+        }
+        
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .footer-links a { 
+            display: block; 
+            color: rgba(255, 255, 255, 0.7); 
+            margin-top: 15px; 
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom { 
+            text-align: center; 
+            padding-top: 50px; 
+            border-top: 1px solid rgba(255, 255, 255, 0.1); 
+            margin-top: 60px; 
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer-bottom a { 
+            color: var(--accent); 
+            text-decoration: none;
+        }
+        
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            border-left: 4px solid var(--accent);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .hero-content, .branches-container, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero-text {
+                text-align: center;
+            }
+            
+            .hero-features {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .nav-links, .nav-buttons { 
+                display: none; 
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero-text h1 { 
+                font-size: 2.5rem; 
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .top-header-container {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .hero-text h1 { 
+                font-size: 2.2rem; 
+            }
+            
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+            
+            .branch-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h1 { 
+                font-size: 2rem; 
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .product-card, .channel-card {
+                padding: 30px 20px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER SUPERIOR -->
+    <div class="top-header">
+        <div class="top-header-container">
+            <div class="header-links">
+                <a href="#"><i class="fas fa-phone-alt"></i> Línea nacional: 01-8000-123456</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Encuentra sucursales y cajeros</a>
+            </div>
+            <div class="header-links">
+                <a href="#"><i class="fas fa-lock"></i> Banca Virtual</a>
+                <a href="#"><i class="fas fa-user"></i> Acceso Empresas</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav id="navbar">
+        <div class="logo-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">BN</div>
+                <div>
+                    <span style="color: var(--primary);">Banco</span><br>
+                    <span style="color: var(--secondary); font-size: 1.2rem;">Nacional Financiero</span>
+                </div>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">Inicio</a></li>
+            <li><a href="#productos">Productos</a></li>
+            <li><a href="#canales">Canales Digitales</a></li>
+            <li><a href="#sucursales">Sucursales</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="#" class="btn-bank btn-primary"><i class="fas fa-user-circle"></i> Banca Virtual</a>
+            <a href="#" class="btn-bank btn-secondary"><i class="fas fa-handshake"></i> Solicitar Crédito</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HERO BANCARIO -->
+    <section class="hero-bank" id="inicio">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Confianza que construye futuro</h1>
+                <p>Somos el banco de los colombianos, con más de 95 años de experiencia brindando soluciones financieras que impulsan el desarrollo del país.</p>
+                <div style="display: flex; gap: 15px; margin-top: 40px;">
+                    <a href="#productos" class="btn-bank btn-secondary" style="padding: 15px 35px;">Conoce nuestros productos</a>
+                    <a href="#sucursales" class="btn-bank" style="background: white; color: var(--primary); padding: 15px 35px;">Encuentra una sucursal</a>
+                </div>
+                
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem;">Seguridad Garantizada</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Tu dinero está protegido</p>
+                        </div>
+                    </div>
+                    <div class="hero-feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 1.1rem;">Atención 24/7</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Siempre disponibles para ti</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: var(--border-radius); backdrop-filter: blur(10px);">
+                <h3 style="margin-bottom: 25px; font-size: 1.5rem;">Calcula tu crédito</h3>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Monto deseado</label>
+                    <input type="range" min="1000000" max="100000000" value="25000000" style="width: 100%; margin-bottom: 10px;">
+                    <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <span>$1.000.000</span>
+                        <span>$100.000.000</span>
+                    </div>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Plazo (meses)</label>
+                    <select style="width: 100%; padding: 12px; border-radius: 4px; border: none; background: white; color: var(--dark);">
+                        <option>12 meses</option>
+                        <option>24 meses</option>
+                        <option>36 meses</option>
+                        <option>48 meses</option>
+                        <option>60 meses</option>
+                    </select>
+                </div>
+                <button class="btn-bank btn-secondary" style="width: 100%; padding: 15px; margin-top: 20px;">Simular crédito</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS BANCARIOS -->
+    <section id="productos" class="products-section">
+        <div class="section-header">
+            <h2>Productos y Servicios</h2>
+            <p>Encuentra la solución financiera que se adapta a tus necesidades personales y empresariales.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3>Cuentas de Ahorro</h3>
+                <p>Ahorra con las mejores tasas del mercado y accede a tu dinero cuando lo necesites.</p>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Sin costo de manejo</li>
+                    <li><i class="fas fa-check"></i> Tarjeta débito gratis</li>
+                    <li><i class="fas fa-check"></i> Ahorro programado</li>
+                    <li><i class="fas fa-check"></i> Disponibilidad 24/7</li>
+                </ul>
+                <a href="#" class="btn-bank btn-primary">Abrir cuenta ahora</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-hand-holding-usd"></i>
+                </div>
+                <h3>Créditos y Préstamos</h3>
+                <p>Financia tus proyectos personales, educativos, de vivienda o para tu negocio.</p>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> Crédito de libre inversión</li>
+                    <li><i class="fas fa-check"></i> Crédito hipotecario</li>
+                    <li><i class="fas fa-check"></i> Crédito vehicular</li>
+                    <li><i class="fas fa-check"></i> Líneas de crédito empresarial</li>
+                </ul>
+                <a href="#" class="btn-bank btn-primary">Solicitar crédito</a>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Inversiones</h3>
+                <p>Haz crecer tu dinero con nuestras alternativas de inversión de renta fija y variable.</p>
+                <ul class="product-features">
+                    <li><i class="fas fa-check"></i> CDT a diferentes plazos</li>
+                    <li><i class="fas fa-check"></i> Fondos de inversión</li>
+                    <li><i class="fas fa-check"></i> Acciones y divisas</li>
+                    <li><i class="fas fa-check"></i> Asesoría personalizada</li>
+                </ul>
+                <a href="#" class="btn-bank btn-primary">Invertir ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CANALES DIGITALES -->
+    <section id="canales" class="channels-section">
+        <div class="section-header">
+            <h2>Canales Digitales</h2>
+            <p>Realiza tus operaciones bancarias de forma rápida y segura desde donde te encuentres.</p>
+        </div>
+        <div class="channels-grid">
+            <div class="channel-card">
+                <div class="channel-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>App Móvil</h3>
+                <p>Gestiona tus finanzas desde tu celular. Transfiere, paga y consulta en tiempo real.</p>
+                <div style="margin-top: 25px;">
+                    <a href="#" style="margin-right: 15px;"><i class="fab fa-google-play"></i></a>
+                    <a href="#"><i class="fab fa-app-store-ios"></i></a>
+                </div>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Banca Virtual</h3>
+                <p>Accede a todos los servicios de tu banco desde la comodidad de tu computador.</p>
+                <a href="#" class="btn-bank btn-primary" style="margin-top: 25px;">Ingresar ahora</a>
+            </div>
+            <div class="channel-card">
+                <div class="channel-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <h3>Tarjetas</h3>
+                <p>Paga con seguridad en todo el mundo con nuestras tarjetas débito y crédito.</p>
+                <a href="#" class="btn-bank btn-primary" style="margin-top: 25px;">Solicitar tarjeta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUCURSALES Y CAJEROS -->
+    <section id="sucursales" class="branches-section">
+        <div class="section-header">
+            <h2>Sucursales y Cajeros</h2>
+            <p>Encuentra nuestra red de atención en todo el territorio nacional.</p>
+        </div>
+        <div class="branches-container">
+            <div class="branches-map">
+                <!-- Aquí iría un mapa interactivo -->
+                <div style="width: 100%; height: 100%; background: #2c3e50; display: flex; align-items: center; justify-content: center; color: white; flex-direction: column; gap: 20px;">
+                    <i class="fas fa-map-marked-alt" style="font-size: 4rem; opacity: 0.5;"></i>
+                    <h3>Mapa de Sucursales</h3>
+                    <p>Encuentra la más cercana a tu ubicación</p>
+                </div>
+            </div>
+            <div class="branch-info">
+                <h3>Red Nacional de Atención</h3>
+                <p>Contamos con la red más extensa del país, con presencia en todos los departamentos y los principales municipios.</p>
+                <p>Nuestros cajeros automáticos están disponibles las 24 horas del día, los 365 días del año.</p>
+                
+                <div class="branch-stats">
+                    <div class="branch-stat">
+                        <div class="branch-stat-number">850+</div>
+                        <div class="branch-stat-label">Sucursales</div>
+                    </div>
+                    <div class="branch-stat">
+                        <div class="branch-stat-number">3,200+</div>
+                        <div class="branch-stat-label">Cajeros Automáticos</div>
+                    </div>
+                    <div class="branch-stat">
+                        <div class="branch-stat-number">32</div>
+                        <div class="branch-stat-label">Departamentos</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h4 style="margin-bottom: 15px;">Horarios de atención</h4>
+                    <p><strong>Sucursales:</strong> Lunes a Viernes 8:00 AM - 4:00 PM, Sábados 9:00 AM - 1:00 PM</p>
+                    <p><strong>Cajeros:</strong> Disponibles 24/7 en todo el país</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTICIAS Y COMUNICADOS -->
+    <section id="noticias" class="news-section">
+        <div class="section-header">
+            <h2>Noticias y Comunicados</h2>
+            <p>Mantente informado sobre nuestras últimas novedades, campañas e información financiera.</p>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="Noticia 1" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">15 Marzo 2024</span>
+                    <h3>Lanzamiento nueva App Banca Móvil 4.0</h3>
+                    <p>Presentamos nuestra renovada aplicación móvil con nuevas funcionalidades y mejor seguridad.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 15px;">Leer más →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?auto=format&fit=crop&w=800&q=80" alt="Noticia 2" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">10 Marzo 2024</span>
+                    <h3>Nuevas tasas para créditos de vivienda</h3>
+                    <p>Aprovecha nuestras tasas preferenciales para créditos hipotecarios durante este mes.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 15px;">Leer más →</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?auto=format&fit=crop&w=800&q=80" alt="Noticia 3" class="news-img">
+                <div class="news-content">
+                    <span class="news-date">5 Marzo 2024</span>
+                    <h3>Reconocimiento a la sostenibilidad empresarial</h3>
+                    <p>Recibimos el premio a la mejor práctica de responsabilidad social empresarial 2024.</p>
+                    <a href="#" style="color: var(--primary); font-weight: 600; text-decoration: none; display: inline-block; margin-top: 15px;">Leer más →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact-section">
+        <div class="section-header">
+            <h2>Contacto y Atención</h2>
+            <p>Estamos aquí para resolver tus dudas y brindarte la mejor atención.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Canales de Atención</h3>
+                <p>Ponte en contacto con nosotros a través de nuestros diferentes canales de atención al cliente.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Líneas de Atención</h4>
+                            <p>Nacional: 01-8000-123456<br>Bogotá: (601) 1234567</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Correo Electrónico</h4>
+                            <p>atencion@bancodecolombia.com<br>Soporte técnico: soporte@bancodecolombia.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div>
+                            <h4>Atención Virtual</h4>
+                            <p>Chat en línea disponible 24/7 en nuestra página web y aplicación móvil.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px;">
+                    <h4>Horarios de Atención Telefónica</h4>
+                    <p>Lunes a Viernes: 7:00 AM - 10:00 PM<br>Sábados y Domingos: 8:00 AM - 6:00 PM<br>Festivos: 9:00 AM - 4:00 PM</p>
+                </div>
+            </div>
+            <div style="background: white; padding: 40px; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                <h3 style="margin-bottom: 25px; color: var(--primary);">Envía un mensaje</h3>
+                <form id="contactForm">
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Nombre completo *</label>
+                        <input type="text" style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ddd; font-family: 'Roboto', sans-serif;" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Correo electrónico *</label>
+                        <input type="email" style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ddd; font-family: 'Roboto', sans-serif;" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Asunto *</label>
+                        <select style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ddd; font-family: 'Roboto', sans-serif;" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option>Consulta general</option>
+                            <option>Reclamo</option>
+                            <option>Sugerencia</option>
+                            <option>Soporte técnico</option>
+                            <option>Información de productos</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Mensaje *</label>
+                        <textarea rows="5" style="width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #ddd; font-family: 'Roboto', sans-serif;" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-bank btn-primary" style="width: 100%; padding: 15px;">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bank-footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <div style="width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-weight: 900;">BN</div>
+                    Banco Nacional Financiero
+                </div>
+                <p>Somos el banco de los colombianos, con más de 95 años de historia sirviendo al país y contribuyendo al desarrollo económico nacional.</p>
+                
+                <div class="security-badge">
+                    <i class="fas fa-shield-alt" style="font-size: 1.5rem; color: var(--accent);"></i>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 5px;">Sitio Seguro</p>
+                        <p style="font-size: 0.9rem;">Transacciones protegidas con encriptación SSL de 256 bits</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <a href="#productos">Productos y Servicios</a>
+                <a href="#canales">Canales Digitales</a>
+                <a href="#sucursales">Sucursales y Cajeros</a>
+                <a href="#noticias">Noticias y Comunicados</a>
+                <a href="#contacto">Atención al Cliente</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Información de Contacto</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Carrera 7 # 14-78, Bogotá D.C.</p>
+                <p><i class="fas fa-phone-alt"></i> 01-8000-123456</p>
+                <p><i class="fas fa-envelope"></i> info@bancodecolombia.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Viernes: 8:00 AM - 4:00 PM</p>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Banco Nacional Financiero S.A. | <a href="#">Términos y Condiciones</a> | <a href="#">Política de Privacidad</a> | <a href="#">Defensoría del Consumidor Financiero</a> | <a href="#">Información Transparente</a>
+            <p style="margin-top: 15px; font-size: 0.8rem;">Entidad vigilada por la Superintendencia Financiera de Colombia. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- CHATBOT BANCARIO (IZQUIERDA) -->
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+    </div>
+
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div>
+                    <h3>Asistente Bancario</h3>
+                    <p class="chatbot-status">En línea • Asistencia 24/7</p>
+                </div>
+            </div>
+            <button class="chatbot-close" id="chatbotClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="chatbot-welcome">
+                <div class="chatbot-message bot">
+                    <div class="message-content">
+                        <p>¡Hola! 👋 Soy el asistente virtual del Banco Nacional Financiero. ¿En qué puedo ayudarle hoy?</p>
+                        <p class="message-time">Ahora</p>
+                    </div>
+                </div>
+                <div class="chatbot-message bot">
+                    <div class="message-content">
+                        <p>Puedo ayudarle con:</p>
+                        <div class="quick-options">
+                            <button class="quick-option" data-question="productos">🏦 Productos bancarios</button>
+                            <button class="quick-option" data-question="sucursales">📍 Sucursales cercanas</button>
+                            <button class="quick-option" data-question="bancavirtual">💻 Banca virtual</button>
+                            <button class="quick-option" data-question="contacto">📞 Contactar asesor</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Escriba su consulta aquí..." autocomplete="off">
+            <button id="chatbotSend">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <style>
+        /* Estilos específicos para el chatbot bancario */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 51, 160, 0.3);
+            z-index: 9999;
+            transition: var(--transition);
+            border: 3px solid white;
+        }
+        
+        .chatbot-toggle:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+        
+        .chatbot-container {
+            position: fixed;
+            bottom: 105px;
+            left: 30px;
+            width: 380px;
+            height: 550px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            transform-origin: bottom left;
+            animation: slideInUp 0.3s ease-out;
+            border: 1px solid var(--light-gray);
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .chatbot-container.active {
+            display: flex;
+        }
+        
+        .chatbot-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chatbot-header-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .chatbot-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+        
+        .chatbot-header h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .chatbot-status {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        
+        .chatbot-close {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+        
+        .chatbot-close:hover {
+            opacity: 1;
+            transform: rotate(90deg);
+        }
+        
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: var(--light);
+        }
+        
+        .chatbot-message {
+            display: flex;
+            max-width: 85%;
+        }
+        
+        .chatbot-message.bot {
+            align-self: flex-start;
+        }
+        
+        .chatbot-message.user {
+            align-self: flex-end;
+        }
+        
+        .message-content {
+            padding: 14px 18px;
+            border-radius: 18px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chatbot-message.bot .message-content {
+            background: white;
+            border-bottom-left-radius: 5px;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .chatbot-message.user .message-content {
+            background: var(--primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-time {
+            font-size: 0.7rem;
+            opacity: 0.7;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .chatbot-welcome {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .quick-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quick-option {
+            background: rgba(0, 51, 160, 0.05);
+            border: 1px solid rgba(0, 51, 160, 0.1);
+            border-radius: 8px;
+            padding: 11px 16px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: left;
+            color: var(--dark);
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .quick-option:hover {
+            background: rgba(0, 51, 160, 0.1);
+            transform: translateX(3px);
+        }
+        
+        .chatbot-input {
+            display: flex;
+            padding: 20px;
+            border-top: 1px solid var(--light-gray);
+            background: white;
+        }
+        
+        .chatbot-input input {
+            flex: 1;
+            padding: 14px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--light-gray);
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition);
+            background: var(--light);
+        }
+        
+        .chatbot-input input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 51, 160, 0.1);
+            background: white;
+        }
+        
+        .chatbot-input button {
+            width: 52px;
+            height: 52px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            margin-left: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+        
+        .chatbot-input button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 12px 18px;
+            background: white;
+            border-radius: 18px;
+            border-bottom-left-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+            border: 1px solid var(--light-gray);
+        }
+        
+        .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray);
+            animation: typing 1.5s infinite ease-in-out;
+        }
+        
+        .typing-indicator span:nth-child(1) { animation-delay: 0s; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        
+        @keyframes typing {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-8px); }
+        }
+        
+        /* Responsive para chatbot */
+        @media (max-width: 768px) {
+            .chatbot-container {
+                width: 320px;
+                height: 500px;
+                left: 20px;
+                bottom: 90px;
+            }
+            
+            .chatbot-toggle {
+                width: 58px;
+                height: 58px;
+                left: 20px;
+                bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .chatbot-container {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+                height: 450px;
+            }
+            
+            .chatbot-toggle {
+                left: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        // Funcionalidad del chatbot bancario
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatbotToggle = document.getElementById('chatbotToggle');
+            const chatbotContainer = document.getElementById('chatbotContainer');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            const quickOptions = document.querySelectorAll('.quick-option');
+            
+            // Respuestas específicas para banco
+            const chatbotResponses = {
+                'productos': {
+                    question: '¿Qué productos bancarios ofrecen?',
+                    answer: 'Ofrecemos:<br><br>• <strong>Cuentas de Ahorro:</strong> Sin costo de manejo, tarjeta débito gratis<br>• <strong>Créditos:</strong> Libre inversión, hipotecarios, vehiculares<br>• <strong>Inversiones:</strong> CDT, fondos, asesoría personalizada<br>• <strong>Tarjetas:</strong> Débito y crédito nacionales e internacionales<br><br>¿Le interesa algún producto en particular?'
+                },
+                'sucursales': {
+                    question: '¿Dónde hay una sucursal cercana?',
+                    answer: 'Tenemos más de <strong>850 sucursales</strong> en todo el país. Para encontrar la más cercana:<br><br>1. Use nuestro localizador en la sección "Sucursales"<br>2. Llame al 01-8000-123456 para orientación<br>3. Consulte nuestra App Móvil con GPS<br><br>¿Necesita ayuda para encontrar una sucursal específica?'
+                },
+                'bancavirtual': {
+                    question: '¿Cómo accedo a la banca virtual?',
+                    answer: 'Para acceder a la Banca Virtual:<br><br>1. Visite <strong>www.bancodecolombia.com</strong><br>2. Haga clic en "Banca Virtual"<br>3. Ingrese su usuario y clave<br>4. Si es nuevo usuario, regístrese con su cédula y número de cuenta<br><br>También puede usar nuestra App Móvil disponible en Play Store y App Store.'
+                },
+                'contacto': {
+                    question: '¿Cómo contacto con un asesor?',
+                    answer: 'Puede contactar con un asesor:<br><br>• <strong>Teléfono:</strong> 01-8000-123456 (Nacional)<br>• <strong>Chat en línea:</strong> Disponible 24/7 en nuestro sitio web<br>• <strong>Sucursales:</strong> Lunes a Viernes 8AM-4PM, Sábados 9AM-1PM<br>• <strong>Email:</strong> atencion@bancodecolombia.com<br><br>¿Prefiere que le contactemos nosotros?'
+                },
+                'default': {
+                    question: '',
+                    answer: 'Entiendo su consulta. Para brindarle información más precisa y personalizada, le recomiendo:<br><br>1. Contactar directamente con uno de nuestros asesores<br>2. Visitar una sucursal para atención personalizada<br>3. Revisar nuestra sección de "Productos y Servicios"<br><br>¿Hay algo más en lo que pueda asistirle?'
+                }
+            };
+            
+            // Abrir/cerrar chatbot
+            chatbotToggle.addEventListener('click', function() {
+                chatbotContainer.classList.add('active');
+                chatbotToggle.style.display = 'none';
+            });
+            
+            chatbotClose.addEventListener('click', function() {
+                chatbotContainer.classList.remove('active');
+                chatbotToggle.style.display = 'flex';
+            });
+            
+            // Enviar mensaje
+            chatbotSend.addEventListener('click', sendMessage);
+            
+            // Enviar mensaje con Enter
+            chatbotInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Opciones rápidas
+            quickOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const questionType = this.getAttribute('data-question');
+                    askQuickQuestion(questionType);
+                });
+            });
+            
+            // Función para enviar mensaje
+            function sendMessage() {
+                const message = chatbotInput.value.trim();
+                
+                if (message === '') return;
+                
+                // Agregar mensaje del usuario
+                addMessage(message, 'user');
+                
+                // Limpiar input
+                chatbotInput.value = '';
+                
+                // Mostrar indicador de escritura
+                showTypingIndicator();
+                
+                // Respuesta automática después de un breve retraso
+                setTimeout(() => {
+                    // Remover indicador de escritura
+                    removeTypingIndicator();
+                    
+                    // Generar respuesta
+                    let response = getResponse(message);
+                    
+                    // Agregar respuesta del bot
+                    addMessage(response, 'bot');
+                    
+                    // Desplazar hacia abajo
+                    scrollToBottom();
+                }, 1500);
+            }
+            
+            // Función para preguntas rápidas
+            function askQuickQuestion(questionType) {
+                const question = chatbotResponses[questionType].question;
+                
+                // Agregar pregunta del usuario
+                addMessage(question, 'user');
+                
+                // Mostrar indicador de escritura
+                showTypingIndicator();
+                
+                // Respuesta después de un breve retraso
+                setTimeout(() => {
+                    // Remover indicador de escritura
+                    removeTypingIndicator();
+                    
+                    // Obtener respuesta
+                    const response = chatbotResponses[questionType].answer;
+                    
+                    // Agregar respuesta del bot
+                    addMessage(response, 'bot');
+                    
+                    // Desplazar hacia abajo
+                    scrollToBottom();
+                }, 1000);
+            }
+            
+            // Función para agregar mensaje
+            function addMessage(text, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `chatbot-message ${sender}`;
+                
+                const now = new Date();
+                const timeString = now.getHours().toString().padStart(2, '0') + ':' + 
+                                  now.getMinutes().toString().padStart(2, '0');
+                
+                messageDiv.innerHTML = `
+                    <div class="message-content">
+                        <p>${text}</p>
+                        <p class="message-time">${timeString}</p>
+                    </div>
+                `;
+                
+                chatbotMessages.appendChild(messageDiv);
+                scrollToBottom();
+            }
+            
+            // Función para mostrar indicador de escritura
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.className = 'typing-indicator';
+                typingDiv.id = 'typingIndicator';
+                typingDiv.innerHTML = '<span></span><span></span><span></span>';
+                
+                chatbotMessages.appendChild(typingDiv);
+                scrollToBottom();
+            }
+            
+            // Función para remover indicador de escritura
+            function removeTypingIndicator() {
+                const typingIndicator = document.getElementById('typingIndicator');
+                if (typingIndicator) {
+                    typingIndicator.remove();
+                }
+            }
+            
+            // Función para obtener respuesta automática
+            function getResponse(message) {
+                const lowerMessage = message.toLowerCase();
+                
+                // Detectar palabras clave específicas de banco
+                if (lowerMessage.includes('hola') || lowerMessage.includes('buenos días') || lowerMessage.includes('buenas')) {
+                    return '¡Hola! 👋 Bienvenido al Banco Nacional Financiero. ¿En qué puedo ayudarle hoy?';
+                } else if (lowerMessage.includes('producto') || lowerMessage.includes('cuenta') || lowerMessage.includes('ahorro') || lowerMessage.includes('crédito') || lowerMessage.includes('préstamo')) {
+                    return chatbotResponses['productos'].answer;
+                } else if (lowerMessage.includes('sucursal') || lowerMessage.includes('cajero') || lowerMessage.includes('ubicación') || lowerMessage.includes('dirección')) {
+                    return chatbotResponses['sucursales'].answer;
+                } else if (lowerMessage.includes('banca virtual') || lowerMessage.includes('app') || lowerMessage.includes('aplicación') || lowerMessage.includes('internet')) {
+                    return chatbotResponses['bancavirtual'].answer;
+                } else if (lowerMessage.includes('contacto') || lowerMessage.includes('teléfono') || lowerMessage.includes('asesor') || lowerMessage.includes('hablar')) {
+                    return chatbotResponses['contacto'].answer;
+                } else if (lowerMessage.includes('tarjeta') || lowerMessage.includes('débito') || lowerMessage.includes('crédito')) {
+                    return 'Ofrecemos tarjetas débito y crédito con beneficios exclusivos:<br><br>• <strong>Tarjeta Débito:</strong> Sin costo anual, retiros en cajeros nacionales<br>• <strong>Tarjeta Crédito:</strong> Puntos canjeables, seguros incluidos<br><br>¿Le interesa solicitar una tarjeta?';
+                } else if (lowerMessage.includes('tasa') || lowerMessage.includes('interés') || lowerMessage.includes('rendimiento')) {
+                    return 'Nuestras tasas de interés varían según el producto y plazo. Para información actualizada sobre tasas de:<br><br>• Cuentas de ahorro<br>• Créditos<br>• Inversiones (CDT)<br><br>Le recomiendo visitar una sucursal o llamar al 01-8000-123456.';
+                } else if (lowerMessage.includes('seguridad') || lowerMessage.includes('fraude') || lowerMessage.includes('robo')) {
+                    return 'Su seguridad es nuestra prioridad. Contamos con:<br><br>• Encriptación SSL de 256 bits<br>• Confirmación de transacciones por SMS<br>• Monitoreo antifraude 24/7<br>• Seguro contra robos y fraudes<br><br>Si sospecha de actividad fraudulenta, llame inmediatamente al 01-8000-123456.';
+                } else if (lowerMessage.includes('horario') || lowerMessage.includes('hora') || lowerMessage.includes('cuándo') || lowerMessage.includes('abierto')) {
+                    return 'Nuestros horarios de atención:<br><br>• <strong>Sucursales:</strong> Lunes a Viernes 8AM-4PM, Sábados 9AM-1PM<br>• <strong>Cajeros:</strong> Disponibles 24/7<br>• <strong>Atención telefónica:</strong> Lunes a Viernes 7AM-10PM, fines de semana 8AM-6PM<br><br>¿Necesita información específica de alguna sucursal?';
+                } else if (lowerMessage.includes('gracias') || lowerMessage.includes('thank you')) {
+                    return '¡De nada! 😊 Estoy aquí para ayudarle. ¿Hay algo más en lo que pueda asistirle?';
+                } else if (lowerMessage.includes('adiós') || lowerMessage.includes('chao') || lowerMessage.includes('hasta luego') || lowerMessage.includes('salir')) {
+                    return '¡Hasta luego! 👋 Gracias por contactar al Banco Nacional Financiero. Recuerde que estamos disponibles 24/7 a través de nuestros canales digitales. ¡Que tenga un excelente día!';
+                } else {
+                    return chatbotResponses['default'].answer;
+                }
+            }
+            
+            // Función para desplazar al fondo del chat
+            function scrollToBottom() {
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+            
+            // Cerrar chatbot al hacer clic fuera de él
+            document.addEventListener('click', function(e) {
+                if (!chatbotContainer.contains(e.target) && 
+                    !chatbotToggle.contains(e.target) && 
+                    chatbotContainer.classList.contains('active')) {
+                    
+                    // Solo cerrar si no es una opción rápida
+                    if (!e.target.classList.contains('quick-option')) {
+                        chatbotContainer.classList.remove('active');
+                        chatbotToggle.style.display = 'flex';
+                    }
+                }
+            });
+            
+            // Manejo del formulario de contacto
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('¡Gracias por su mensaje! Un asesor del Banco Nacional Financiero se pondrá en contacto con usted en menos de 24 horas.');
+                this.reset();
+            });
+        });
+    </script>
+
+</body>
+</html>
